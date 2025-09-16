@@ -113,6 +113,7 @@ function ChatBubble({
       startPoint,
       endPoint,
       direction,
+      relativeSizeRatio,
     );
 
     // 테두리
@@ -128,7 +129,7 @@ function ChatBubble({
     ctx.moveTo(startPoint.x, startPoint.y);
     ctx.quadraticCurveTo(출입제어점X, 출입제어점Y, 꼭지점X, 꼭지점Y);
     ctx.quadraticCurveTo(진입제어점X, 진입제어점Y, endPoint.x, endPoint.y);
-    ctx.lineTo(꼭지점X, (startPoint.y + endPoint.y + angleRange.offset) / 2);
+    ctx.lineTo(꼭지점X, (startPoint.y + endPoint.y + angleRange.offset * relativeSizeRatio) / 2);
     ctx.closePath();
     ctx.fillStyle = '#FFFFFF';
     ctx.fill();
@@ -204,13 +205,14 @@ function 꼭지점좌표(
   startPoint: { x: number; y: number },
   endPoint: { x: number; y: number },
   direction: 'top' | 'bottom',
+  ratio: number,
 ) {
   // 왼쪽, 오른쪽, 위, 아래 + 갈고리 휘는 방향 등 세부 설정까지 정리 후 리팩터링 필요.
   const isTopDirection = direction === 'top';
   const 꼭지점X = isTopDirection ? (startPoint.x + endPoint.x) / 2 : endPoint.x + 10;
   const 꼭지점Y = isTopDirection
-    ? (startPoint.y + endPoint.y - 47) / 2
-    : (startPoint.y + endPoint.y + 47) / 2;
+    ? (startPoint.y + endPoint.y - 47 * ratio) / 2
+    : (startPoint.y + endPoint.y + 47 * ratio) / 2;
   const 출입제어점X = (startPoint.x + 꼭지점X) / 2; // 오른쪽으로 얼마나 휘게 할지
   const 출입제어점Y = (꼭지점Y + startPoint.y) / 2; // 위쪽으로 살짝 들어올릴 수도 있음
   const 진입제어점X = endPoint.x; // 오른쪽으로 얼마나 휘게 할지

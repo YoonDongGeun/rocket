@@ -1,3 +1,4 @@
+'use client';
 import { SajuResultDTO } from '@/entities/Saju';
 import Cloud1 from '@/public/cloud1.svg';
 import Cloud2 from '@/public/cloud2.svg';
