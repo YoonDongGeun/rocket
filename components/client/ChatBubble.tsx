@@ -165,7 +165,6 @@ function ChatBubble({
 
 export default ChatBubble;
 
-
 const measureText = (text: string, fontSize: number, ctx: CanvasRenderingContext2D) => {
   const lines = text.split('\n');
   let maxWidth = 0;

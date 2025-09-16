@@ -1,4 +1,3 @@
-'use client';
 import { SajuResultDTO } from '@/entities/Saju';
 import Cloud1 from '@/public/cloud1.svg';
 import Cloud2 from '@/public/cloud2.svg';
@@ -18,9 +17,6 @@ function SajuResultBoard({ sajuResult }: SajuResultProps) {
       const canvas = await html2canvas(resultRef.current, {
         scale: 2, // 고해상도로 뽑고 싶으면 2~3 정도
         useCORS: true,
-        onclone: (doc, el) => {
-          console.log(el, 'ㅇㅋ');
-        },
       });
       // 이미지 다운로드
       const imgData = canvas.toDataURL('image/png');
