@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -10,6 +12,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-gyeonggi: GyeonggiMillenniumBackground;
+  --font-gapyeong: GapyeongHanseokbongBigBrush;
+  --font-zen: Zen Antique;
+  --font-zen-maru: Zen Maru Gothic;
+  --font-webtoon: KoldiWebtoonMakerOngleifFont;
+  --text-clamp-title: clamp(0.8rem, 5vw, 1.25rem);
+  --text-clamp-bubble: clamp(10px, 20px, 30px);
+  --text-clamp-normal: clamp(1rem, 13vw, 3.125rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +33,50 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'GyeonggiMillenniumBackground';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Batang_Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GyeonggiMillenniumBackground';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Batang_Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GapyeongHanseokbongBigBrush';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/GapyeongHanseokbong-Light.woff2')
+    format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GapyeongHanseokbongBigBrush';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/GapyeongHanseokbong-Regular.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GapyeongHanseokbongBigBrush';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/GapyeongHanseokbong-Bold.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoldiWebtoonMakerOngleifFont';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2508-2@1.0/Ownglyph_Coldywebtoonmaker-Rg.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
